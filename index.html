@@ -1,0 +1,107 @@
+<html>
+  <head>
+    <title>HTML CSS practice</title>
+    <style>
+
+    html, body {
+      margin: 0px;
+    }
+
+    .container {
+      height: 100%;
+      width: 100%;
+      position: relative;
+
+    }
+
+    .box {
+      display: inline-block;
+      margin: 0px;
+      opacity: 0.7;
+      height: 100%;
+      position: relative;
+    }
+
+    .box1 {
+      font-size: 15px;
+      background-color: green;
+      width: 200px;
+      padding: 20px;
+      position: relative;
+      top: 0px;
+      transform: translateX(0);
+      transition: transform 0.4s ease;
+    }
+    .slideLeft {
+      transform: translateX(-240px);
+      transition: transform 0.4s ease;
+    }
+    .box2 {
+      font-size: 15px;
+      background-color: blue;
+      width: 100%;
+      position: absolute;
+      top: 0px;
+      left: 100%;
+    }
+    .box3 {
+      position: absolute;
+      top: 0px;
+      background-color: lightgray;
+      width: 100%;
+      padding: 20px;
+      transition: transform 0.4s ease;
+    }
+    .p-20px {
+      padding: 20px;
+    }
+
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+      <div id="box1" class="box box1">
+        Box1
+        <button id="button1">Button 1</button>
+        <div class="box box2">
+          <div class="p-20px">
+            Box2
+            <button id="button2">Button 2</button>
+          </div>
+
+        </div>
+      </div>
+
+      <div id="box3" class="box box3">
+        Box3
+        <button id="button3">Button 3</button>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous">
+      </script>
+      <script>
+        console.log("Hello!");
+        $(function(){
+            $("#button1").on('click', function(){
+            $("#box1").toggleClass("slideLeft");
+          });
+
+          $("#button2").on('click', function(){
+            $("#box1").toggleClass("slideLeft");
+          });
+
+          $("#button3").on('click', function(){
+            $("#box3").toggleClass("slideLeft");
+          });
+
+        });
+
+      </script>
+  </body>
+
+</html>
